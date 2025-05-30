@@ -22,16 +22,13 @@ const Meal = () => {
     return (
         <>
             <div className="mx-auto text-center my-3">
-                <button type="button" class="btn btn-primary">Primary</button>
-                <button type="button" class="btn btn-secondary">Secondary</button>
-                <button type="button" class="btn btn-success">Success</button>
-                <button type="button" class="btn btn-danger">Danger</button>
-                <button type="button" class="btn btn-warning">Warning</button>
-                <button type="button" class="btn btn-info">Info</button>
-                <button type="button" class="btn btn-light">Light</button>
-                <button type="button" class="btn btn-dark">Dark</button>
-
-                <button type="button" class="btn btn-link">Link</button>
+                <button type="button" class="btn btn-primary">Indian</button>
+                <button type="button" class="btn btn-secondary">Canadian</button>
+                <button type="button" class="btn btn-success">American</button>
+                <button type="button" class="btn btn-danger">Thai</button>
+                <button type="button" class="btn btn-warning">Chinese</button>
+                <button type="button" class="btn btn-info">Japanese</button>
+                <button type="button" class="btn btn-success">Russian</button>
             </div >
             <div>
 
