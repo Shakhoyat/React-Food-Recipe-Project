@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react' // Fix import
 
 const Meal = () => {
     const [mealData, setmealData] = useState([]); // Initialize as empty array
-
+    const [area, setArea] = useState('Canadian'); // Default area set to Canadian
     useEffect(() => {
         const fetchDataFromAPI = async () => {
             try {
-                const api = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian');
+                const api = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=' + area);
                 if (!api.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -17,19 +17,23 @@ const Meal = () => {
             }
         };
         fetchDataFromAPI();
-    }, []);
+    }, [area]);
 
     return (
         <>
             <div className="mx-auto text-center my-3">
-                <button type="button" class="btn btn-primary">Indian</button>
-                <button type="button" class="btn btn-secondary">Canadian</button>
-                <button type="button" class="btn btn-success">American</button>
-                <button type="button" class="btn btn-danger">Thai</button>
-                <button type="button" class="btn btn-warning">Chinese</button>
-                <button type="button" class="btn btn-info">Japanese</button>
-                <button type="button" class="btn btn-success">Russian</button>
-            </div >
+                <button onClick={() => setArea('Canadian')} type="button" className="btn btn-secondary">Canadian</button>
+                <button
+                    onClick={() => setArea('Indian')}
+                    type="button" className="btn btn-primary">
+                    Indian
+                </button>
+                <button onClick={() => setArea('American')} type="button" className="btn btn-success">American</button>
+                <button onClick={() => setArea('Thai')} type="button" className="btn btn-danger">Thai</button>
+                <button onClick={() => setArea('Chinese')} type="button" className="btn btn-warning">Chinese</button>
+                <button onClick={() => setArea('Japanese')} type="button" className="btn btn-info">Japanese</button>
+                <button onClick={() => setArea('Russian')} type="button" className="btn btn-success">Russian</button>
+            </div>
             <div>
 
                 {mealData.length > 0 ? (
