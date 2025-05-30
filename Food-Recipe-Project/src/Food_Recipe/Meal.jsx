@@ -23,10 +23,10 @@ const Meal = () => {
         <div>
             <h1>Meal Data</h1>
             {mealData.length > 0 ? (
-                <ul>
+                <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', listStyleType: 'none', padding: 0 }}>
                     {mealData.map((meal) => (
                         <li key={meal.idMeal}>
-                            <img src={meal.strMealThumb} alt={meal.strMeal} />
+                            <img src={meal.strMealThumb} alt={meal.strMeal} style={{ width: '220px', borderRadius: '10px', border: '2px solid blue' }} />
                             <p>{meal.strMeal}</p>
                         </li>
                     ))}
